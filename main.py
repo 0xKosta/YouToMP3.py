@@ -28,7 +28,7 @@ Would you like to download this playlist as an MP3? [Y/N]''')
         print("Playlist downloaded!")
 
 def download(url):
-    ydl = yt.YoutubeDL({'outtmpl' : '/downloads/%(title)s.mp3'})
+    ydl = yt.YoutubeDL({'outtmpl' : '/downloads/%(title)s.mp3', 'format':'bestaudio'})
     with ydl:
         result = ydl.extract_info(url,
                                   download=False)
